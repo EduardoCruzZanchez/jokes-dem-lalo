@@ -70,10 +70,10 @@ export class JokesDm extends LitElement {
   }
 
   firstUpdated() {
-    const athleapRecipesDP = this.shadowRoot.querySelector(
+    const jokesDP = this.shadowRoot.querySelector(
       '#jokes-dm'
     );
-    // 2. Lanzar un evento, para avisar que el request iniciará
+    //Lanzar un evento, para avisar que el request iniciará
     this.dispatchEvent(
       new CustomEvent('jokes-dm-request-start', {
         detail: true,
@@ -81,14 +81,14 @@ export class JokesDm extends LitElement {
         composed: true,
       })
     );
-    // 3. Ejecutar el DP
-    athleapRecipesDP
+    //Ejecutar el generic DP
+    jokesDP
       .generateRequest()
       .then(({ response }) => {
         console.log(response)
-        // 4-A. Normalizar la respuesta
+        //Normalizar la respuesta
         const normalizedResponse = this.normalizeResponse(response);
-        // 5-A. Reaccionar a la respuesta exitosa
+        //Reaccionar a la respuesta exitosa
         this.dispatchEvent(
           new CustomEvent('jokes-dm-success', {
             bubbles: true,
@@ -97,7 +97,7 @@ export class JokesDm extends LitElement {
           })
         );
       })
-      // 5-B. Reaccionar a la respuesta fallida
+      //Reaccionar a la respuesta fallida
       .catch((err) => {
         this.dispatchEvent(
           new CustomEvent('jokes-dm-error', {
@@ -116,7 +116,7 @@ export class JokesDm extends LitElement {
         id="jokes-dm"
         method="GET"
         host="https://v2.jokeapi.dev"
-        path="/joke/Any?type=twopart&amount=2"
+        path=${`/joke/Any?type=twopart&amount=1`}
       ></bbva-core-generic-dp>
     `;
   }
