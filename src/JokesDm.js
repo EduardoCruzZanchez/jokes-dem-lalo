@@ -116,7 +116,7 @@ export class JokesDm extends LitElement {
         id="jokes-dm"
         method="GET"
         host="https://v2.jokeapi.dev"
-        path=${`/joke/Any?type=twopart&amount=1`}
+        path=${`/joke/Any?type=twopart&amount=2`}
       ></bbva-core-generic-dp>
     `;
   }
