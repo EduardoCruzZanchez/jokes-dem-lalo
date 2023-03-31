@@ -89,13 +89,13 @@ export class JokesDm extends LitElement {
         // 4-A. Normalizar la respuesta
         const normalizedResponse = this.normalizeResponse(response);
         // 5-A. Reaccionar a la respuesta exitosa
-        /*this.dispatchEvent(
+        this.dispatchEvent(
           new CustomEvent('jokes-dm-success', {
             bubbles: true,
             composed: true,
             detail: normalizedResponse,
           })
-        );*/
+        );
       })
       // 5-B. Reaccionar a la respuesta fallida
       .catch((err) => {
