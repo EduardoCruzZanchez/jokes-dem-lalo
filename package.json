@@ -11,8 +11,9 @@
     "!**/*.scss"
   ],
   "dependencies": {
-    "@bbva-web-components/bbva-foundations-styles": "^2.3.5",
+    "@bbva-web-components/bbva-core-generic-dp": "^2.1.5",
     "@bbva-web-components/bbva-core-lit-helpers": "^1.0.4",
+    "@bbva-web-components/bbva-foundations-styles": "^2.3.5",
     "lit-element": "^2.0.0"
   },
   "devDependencies": {
